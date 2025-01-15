@@ -49,27 +49,27 @@ export default function AddMessageForm() {
       className="flex flex-col gap-4 mb-4 w-full max-w-xl p-4 items-center"
     >
       <textarea
-        placeholder="insert message here"
+        placeholder="The Message"
         value={content}
         onChange={(e) => setContent(e.target.value)}
         required
-        className="placeholder:text-xs border border-[0.5px] border-gray-800 w-full p-2 h-32 bg-transparent text-black dark:text-white placeholder-gray-500 resize-none focus:outline-none rounded"
+        className="border border-[0.5px] border-gray-800 w-full p-2 h-32 bg-transparent text-black dark:text-white placeholder-gray-500 resize-none focus:outline-none rounded"
       />
       <div className="flex gap-2 w-full">
         <input
           type="text"
-          placeholder="username"
+          placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
-          className="placeholder:text-xs border border-[0.5px] border-gray-800 rounded w-full p-2 bg-transparent text-black dark:text-white placeholder-gray-500 resize-none focus:outline-none"
+          className="border border-[0.5px] border-gray-800 rounded w-full p-2 bg-transparent text-black dark:text-white placeholder-gray-500 resize-none focus:outline-none"
         />
         <input
           type="text"
-          placeholder="category (optional)"
+          placeholder="Category (optional)"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          className="placeholder:text-xs border border-[0.5px] border-gray-800 rounded w-full p-2 bg-transparent text-black dark:text-white placeholder-gray-500 resize-none focus:outline-none"
+          className="border border-[0.5px] border-gray-800 rounded w-full p-2 bg-transparent text-black dark:text-white placeholder-gray-500 resize-none focus:outline-none"
         />
       </div>
       <button
