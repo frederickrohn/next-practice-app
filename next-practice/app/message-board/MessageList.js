@@ -9,7 +9,7 @@ export default function MessageList({ messages }){
             ) : (messages.map(message=>(
                 <div 
                 key={ message.id }
-                className="border p-4 mb-4 rounded shadow-sm bg-black"
+                className="border border-[0.5px] border-gray-800 p-4 mb-4 rounded shadow-sm bg-transparent"
                 >
                     <p className='text-lg'>{message.content}</p>
                     <small className='text-gray-500'>

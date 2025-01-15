@@ -1,10 +1,11 @@
 import Link from "next/link"; // Import Link for navigation
 import MessageList from './MessageList';
+import AddMessageForm from './AddMessageForm';
 
 export default async function MessageBoard(){
 
     //this is server side data fetching, which takes advantage of Next's SSR capabilities
-    //in a MERN stack app, this would be useEffect and using the API call from there
+    //in a MERN stack app, this would instad be useEffect and using the API call function from there
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/messages`, {
         cache: "no-store", // Ensure fresh data for every request
       });
@@ -16,6 +17,7 @@ export default async function MessageBoard(){
             <p className="text-lg text-gray-600 mb-8">
                 This is the Message Board. Write whatever you want here!
             </p>
+            <AddMessageForm />
             <MessageList messages={messages}/>
             <div className="flex gap-4 items-center flex-col sm:flex-row">
                 <Link 
