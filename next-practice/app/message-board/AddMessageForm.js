@@ -53,7 +53,7 @@ export default function AddMessageForm() {
         value={content}
         onChange={(e) => setContent(e.target.value)}
         required
-        className="border border-[0.5px] border-gray-800 w-full p-2 h-32 bg-transparent text-black dark:text-white placeholder-gray-500 resize-none focus:outline-none rounded"
+        className="border border-[0.5px] border-gray-800 w-full p-6 h-32 bg-transparent text-black dark:text-white placeholder-gray-800 resize-none focus:outline-none rounded"
       />
       <div className="flex gap-2 w-full">
         <input
@@ -62,22 +62,22 @@ export default function AddMessageForm() {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
-          className="border border-[0.5px] border-gray-800 rounded w-full p-2 bg-transparent text-black dark:text-white placeholder-gray-500 resize-none focus:outline-none"
+          className="border border-[0.5px] border-gray-800 rounded w-full p-6 bg-transparent text-black dark:text-white placeholder-gray-800 resize-none focus:outline-none"
         />
         <input
           type="text"
           placeholder="Category (optional)"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          className="border border-[0.5px] border-gray-800 rounded w-full p-2 bg-transparent text-black dark:text-white placeholder-gray-500 resize-none focus:outline-none"
+          className="border border-[0.5px] border-gray-800 rounded w-full p-6 bg-transparent text-black dark:text-white placeholder-gray-800 resize-none focus:outline-none"
         />
       </div>
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-auto rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
+        className="text-black dark:text-white mt-4 mb-8 w-auto rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center bg-transparent text-background gap-2 hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
       >
-        {isSubmitting ? "Submitting..." : "Add Message"}
+        {isSubmitting ? "Submitting..." : "Submit"}
       </button>
     </form>
   );
