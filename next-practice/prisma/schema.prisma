@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+// since i am using .env.local instead of .env, use this command to concat .local
+// env $(cat .env.local | xargs) npx prisma migrate dev --name init
+
+// in order to access the psql database through the cli use this command:
+// psql "postgresql://databaseURLFromEnvFile"
+
+//and these commands to navigate it
+// \dt -> see the data tables, \d Message -> to see Message schema, \q -> exit
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL") // Reads the database URL from your .env.local file
+}
+
+model Message {
+  id        Int       @id @default(autoincrement()) // Primary key, auto-incrementing
+  content   String    // Message content
+  username  String    // Non-unique identifier for the message poster
+  category  String?   // Optional category for messages
+  likes     Int       @default(0)                  // Default likes set to 0
+  createdAt DateTime  @default(now())              // Automatically sets the timestamp
+}
